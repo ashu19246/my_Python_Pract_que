@@ -1,0 +1,17 @@
+n=input()
+l=[]
+for i in n:
+  if i=="(":
+    l.append("(")
+  elif i==")":
+    if len(l)==0:
+      print(0)
+      break
+    else:
+      l.pop()
+else:
+  if len(l)==0:
+    print(0)
+  else:
+    print(1)
+""" here (()()) output is = 0 becoz it is fullfil the all ( have ) ."""
