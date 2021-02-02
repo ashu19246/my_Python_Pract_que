@@ -1,0 +1,30 @@
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s):
+    if (s[len(s)-2:]=="PM" and int(s[0:2])>=12) or (s[len(s)-2:]=="AM" and int(s[0:2])<12):
+        return(s[0:len(s)-2])
+    elif (s[len(s)-2:]=="AM" and int(s[0:2])>=12):
+        return "00"+s[2:len(s)-2]
+    else:
+        return str(int(s[0:2])+12)+s[2:len(s)-2]
+        
+    #
+    # Write your code here.
+    #
+
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
